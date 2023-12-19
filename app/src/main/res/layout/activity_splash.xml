@@ -20,7 +20,7 @@
         android:text="@string/dev_name"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/merriweathersans_medium"
         android:textStyle="bold"/>
 
