@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.LoginActivity">
+
+<com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/baseline_arrow_back_ios_24"
+                android:id="@+id/tool_back_img"/>
+        </LinearLayout>
+    </Toolbar>
+
+</com.google.android.material.appbar.AppBarLayout>
+
+<ImageView
+android:id="@+id/instagram_tag"
+android:layout_width="182dp"
+android:layout_height="49dp"
+android:layout_alignParentStart="true"
+android:layout_alignParentEnd="true"
+android:layout_marginStart="96dp"
+android:layout_marginTop="148dp"
+android:layout_marginEnd="96dp"
+app:srcCompat="@drawable/instagram_text" />
+
+<RelativeLayout
+android:layout_width="343dp"
+android:layout_height="262dp"
+android:layout_alignParentStart="true"
+android:layout_marginLeft="16dp"
+android:layout_alignParentTop="true"
+android:layout_alignParentEnd="true"
+android:layout_marginTop="236dp"
+android:layout_marginRight="16dp">
+<EditText
+    android:layout_width="0dp"
+    android:layout_height="50dp"
+    android:id="@+id/username_edtext"
+    android:inputType="text"
+    android:paddingStart="4dp"
+    android:paddingEnd="4dp"
+    android:ems="15"
+    android:hint="Username"
+    android:textSize="17sp"
+    android:background="@drawable/rectangular_shape"
+    android:fontFamily="@font/sf_pro_text_regular"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentRight="true"
+    android:clipToOutline="true"/>
+
+<EditText
+    android:layout_width="0dp"
+    android:layout_height="50dp"
+    android:id="@+id/password_edtext"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/username_edtext"
+    android:layout_marginTop="12dp"
+    android:inputType="textPassword"
+    android:hint="Password"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:background="@drawable/rectangular_shape"
+    android:fontFamily="@font/sf_pro_text_regular"
+    android:textSize="17sp"
+    android:ems="15"/>
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="18dp"
+    android:text="Forgot password?"
+    android:textSize="14sp"
+    android:fontFamily="@font/sf_pro_text_medium"
+    android:textColor="#3797EF"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentRight="true"
+    android:layout_below="@+id/password_edtext"
+    android:id="@+id/forgot_pass_txt"
+    android:gravity="top|right"
+    android:layout_marginTop="10dp"/>
+
+<androidx.appcompat.widget.AppCompatButton
+    android:layout_width="0dp"
+    android:layout_height="45dp"
+    android:layout_below="@+id/forgot_pass_txt"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentLeft="true"
+    android:background="@drawable/rectangular_shape_btn"
+    android:text="Log in"
+    android:textColor="@color/white"
+    android:layout_marginTop="30dp"/>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentEnd="true"
+    android:gravity="center"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginLeft="20dp"
+        app:srcCompat="@drawable/facebook_icon"/>
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="22dp"
+        android:layout_marginLeft="8dp"
+        android:text="Log in with Facebook"
+        android:textColor="#3797EF"
+        android:textSize="17sp"
+        android:textAlignment="viewStart"
+        android:fontFamily="@font/sf_pro_text_semibold"/>
+</LinearLayout>
+</RelativeLayout>
+
+<LinearLayout
+android:layout_width="0dp"
+android:layout_height="20dp"
+android:layout_alignParentLeft="true"
+android:layout_alignParentRight="true"
+android:layout_marginTop="530dp"
+android:gravity="center"
+android:layout_marginLeft="16dp"
+android:layout_marginRight="16dp">
+<View
+    android:layout_width="180dp"
+    android:layout_height="3dp"
+    android:background="@drawable/line"
+    android:layout_marginLeft="16dp"/>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="OR"
+    android:textSize="14sp"
+    android:textStyle="bold"
+    android:fontFamily="@font/sf_pro_text_bold"
+    android:layout_marginLeft="6dp"
+    android:textColor="#66000000"/>
+<View
+    android:layout_width="180dp"
+    android:layout_height="3dp"
+    android:background="@drawable/line"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="16dp"/>
+</LinearLayout>
+
+<LinearLayout
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:layout_marginTop="590dp"
+android:layout_alignParentLeft="true"
+android:layout_alignParentRight="true">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Dont't have an account?"
+    android:fontFamily="@font/sf_pro_text_regular"
+    android:textColor="#66000000"
+    android:textSize="17sp"
+    android:textStyle="bold" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:text="Sign up."
+    android:fontFamily="@font/sf_pro_text_regular"
+    android:textColor="#3797EF"
+    android:textStyle="bold"
+    android:textSize="17sp"/>
+
+</LinearLayout>
+
+<LinearLayout
+android:layout_width="0dp"
+android:layout_height="55dp"
+android:layout_alignParentLeft="true"
+android:layout_alignParentRight="true"
+android:layout_alignParentBottom="true"
+android:layout_marginLeft="16dp"
+android:layout_marginRight="16dp"
+android:orientation="vertical"
+android:gravity="center|top">
+<View
+    android:layout_width="match_parent"
+    android:layout_height="3dp"
+    android:background="@drawable/line"
+    />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Instagram To Fackbook"
+    android:fontFamily="@font/sf_pro_text_light"
+    android:textSize="14sp"
+    android:layout_marginTop="30dp"
+    android:textColor="#66000000"/>
+</LinearLayout>
+
+</RelativeLayout>
