@@ -1,66 +1,82 @@
 package com.chandan.instagram.login;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toolbar;
 
+import com.chandan.instagram.MainActivity;
 import com.chandan.instagram.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Details_login_Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class Details_login_Fragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private EditText UsernameEdt,PasswordEdt;
+    private TextView ForgotPassTxt,LoginByFacebookTxt,SignUpTxt;
+    private AppCompatButton LoginBtn;
+    private ImageView ToolBack;
+    private String username = "Chandan_03_09",password = "69217";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private FragmentManager fm;
+    FragmentTransaction ft;
 
     public Details_login_Fragment() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Details_login_Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Details_login_Fragment newInstance(String param1, String param2) {
-        Details_login_Fragment fragment = new Details_login_Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @SuppressLint("MissingInflatedId")
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_details_login_, container, false);
+        UsernameEdt = view.findViewById(R.id.username_edtext);
+        PasswordEdt = view.findViewById(R.id.password_edtext);
+        ForgotPassTxt = view.findViewById(R.id.forgot_pass_txt);
+        LoginByFacebookTxt = view.findViewById(R.id.login_by_facebook_txt);
+        SignUpTxt = view.findViewById(R.id.sign_up_txt);
+        LoginBtn = view.findViewById(R.id.login_btn);
+        ToolBack = view.findViewById(R.id.tool_back_img);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_details_login_, container, false);
+        LoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences pref = getActivity().getSharedPreferences("login", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putBoolean("flag",true);
+                if(username.equalsIgnoreCase(UsernameEdt.getText().toString()) && password.equalsIgnoreCase(PasswordEdt.getText().toString())){
+                    editor.commit();
+                    getActivity().finish();
+                    Intent mainActivity = new Intent(getActivity().getApplicationContext(), MainActivity.class);
+                    startActivity(mainActivity);
+                }
+            }
+        });
+        ToolBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fm = getActivity().getSupportFragmentManager();
+                ft = fm.beginTransaction();
+
+                ft.replace(R.id.login_frame,new Quick_login_Fragment());
+                fm.popBackStack();
+                ft.commit();
+
+            }
+        });
+        return view;
     }
 }

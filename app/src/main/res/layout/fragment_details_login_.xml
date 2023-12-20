@@ -24,7 +24,6 @@
                 android:id="@+id/tool_back_img"/>
         </LinearLayout>
     </Toolbar>
-
 </com.google.android.material.appbar.AppBarLayout>
 
 <ImageView
@@ -103,7 +102,8 @@ android:layout_marginRight="16dp">
     android:background="@drawable/rectangular_shape_btn"
     android:text="Log in"
     android:textColor="@color/white"
-    android:layout_marginTop="30dp"/>
+    android:layout_marginTop="30dp"
+    android:id="@+id/login_btn"/>
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -127,7 +127,8 @@ android:layout_marginRight="16dp">
         android:textColor="#3797EF"
         android:textSize="17sp"
         android:textAlignment="viewStart"
-        android:fontFamily="@font/sf_pro_text_semibold"/>
+        android:fontFamily="@font/sf_pro_text_semibold"
+        android:id="@+id/login_by_facebook_txt"/>
 </LinearLayout>
 </RelativeLayout>
 
@@ -187,7 +188,8 @@ android:layout_alignParentRight="true">
     android:fontFamily="@font/sf_pro_text_regular"
     android:textColor="#3797EF"
     android:textStyle="bold"
-    android:textSize="17sp"/>
+    android:textSize="17sp"
+    android:id="@+id/sign_up_txt"/>
 
 </LinearLayout>
 
